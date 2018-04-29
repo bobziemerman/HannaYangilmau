@@ -1,0 +1,79 @@
+html {
+  font-size: 10px;
+}
+
+.header {
+  height: 15rem;
+  border-bottom: 1px solid grey;
+}
+
+.header-controls a {
+  font-size: 2rem;
+}
+
+.content {
+  height: 100%;
+}
+
+.hero img {
+  width: 100%;
+}
+
+.hero__text-wrapper {
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+.hero__text {
+  font-size: 1.6rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff; 
+  display: inline;
+  padding: 2rem;
+  position: absolute;
+  top: 10rem;
+  left: 90rem;
+  width: 40rem;
+  border-radius: 2.5rem;
+  
+  /* Needs prefixing */
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.hero__text .btn {
+  font-size: 1.8rem;
+  padding: 0.6rem 4rem;
+}
+
+.footer--mobile {
+  display: none;
+}
+
+
+/***************** MOBILE STYLES TODO *******************/
+
+@media only screen and (max-width: 1000px) {
+
+  .header-controls {
+    display: none;
+  }
+
+  .footer__mobile {
+    position: absolute;
+    bottom: 0;
+    height: 4rem;
+    width: 100%;
+    border-top: 1px solid grey;
+  }
+}
+
+
+/********************* BOOTSTRAP OVERRIDES************************/
+
+.full-width.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
