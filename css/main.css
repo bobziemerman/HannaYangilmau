@@ -7,12 +7,20 @@ html {
   border-bottom: 1px solid grey;
 }
 
-.header-controls a {
+.header-controls .nav {
   font-size: 2rem;
+}
+
+.header-controls .social {
+  font-size: 2.6rem;
 }
 
 .content {
   height: 100%;
+}
+
+.hero {
+  position: relative;
 }
 
 .hero img {
@@ -33,11 +41,10 @@ html {
   padding: 2rem;
   position: absolute;
   top: 10rem;
-  left: 90rem;
+  right: 8rem;
   width: 40rem;
-  border-radius: 2.5rem;
+  border-radius: 1rem;
   
-  /* Needs prefixing */
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
@@ -47,6 +54,24 @@ html {
   padding: 0.6rem 4rem;
 }
 
+button {
+  border-radius: 0.5rem;
+}
+
+.gallery {
+  margin: 0 5%;
+}
+
+.grid-item,
+.grid-sizer {
+  width: 20%;
+}
+
+    .grid-item img {
+      max-width: 100%;
+display:block;
+    }
+
 .footer--mobile {
   display: none;
 }
@@ -54,6 +79,41 @@ html {
 
 /***************** MOBILE STYLES TODO *******************/
 
+@media only screen and (max-width: 1600px) {
+    .grid-item,
+    .grid-sizer {
+      width: 25%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .grid-item,
+    .grid-sizer {
+      width: 33.3%;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .grid-item,
+    .grid-sizer {
+      width: 50%;
+    }
+
+    .hero {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .grid-item,
+    .grid-sizer {
+      width: 100%;
+    }
+}
+
+
+
+/*TODO FIX*/
 @media only screen and (max-width: 1000px) {
 
   .header-controls {

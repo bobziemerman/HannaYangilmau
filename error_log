@@ -1,0 +1,4 @@
+[30-Apr-2018 18:57:22 America/Chicago] PHP Parse error:  syntax error, unexpected '$hostname' (T_VARIABLE), expecting ',' or ';' in /home4/bobziemerman/public_html/hanna/db.php on line 3
+[30-Apr-2018 18:57:35 America/Chicago] PHP Warning:  mssql_connect(): Unable to connect to server: localhost in /home4/bobziemerman/public_html/hanna/db.php on line 8
+[30-Apr-2018 19:01:42 America/Chicago] PHP Warning:  mssql_connect(): Unable to connect to server: localhost in /home4/bobziemerman/public_html/hanna/db.php on line 8
+[30-Apr-2018 19:13:37 America/Chicago] PHP Parse error:  syntax error, unexpected 'var' (T_VAR) in /home4/bobziemerman/public_html/hanna/db.php on line 23

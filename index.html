@@ -15,27 +15,27 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <div class="main" ng-app="harmonicIntervals" ng-controller="main">
+    <div class="main" ng-app="hanna" ng-controller="main">
         <div class="header">
             <div class="full-width row height--100">
                 <div class="col-12 col-md-6 center--v">
-                    <h2 class="center">Hanna Yangilmau</h2>
+                    <h2 class="center">Hanna Yangilmau {{width}}</h2>
                 </div>
                 <div class="header-controls col-sm-6 height--100">
                     <div class="row height--100">
-                        <div class="col-6 center height-100">
-                            <div class="row height--100">
-                                <div class="col-2 center--v">&nbsp;</div>
-                                <div class="col-4 center--v">
+                        <div class="nav col-6 center height-100">
+                            <div class="row height--100 width--100">
+                                <div class="col-2">&nbsp;</div>
+                                <div class="col-4">
                                     <a href="#"><u>Gallery</u></a>
                                 </div>
-                                <div class="col-4 center--v">
+                                <div class="col-4">
                                     <a href="#">Shop</a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-6">
+                        <div class="social col-6">
                             <div class="row center height--100">
                                 <div class="col-3 center--v">&nbsp;</div>
                                 <div class="col-2 center--v">
@@ -62,7 +62,6 @@
 
         <div class="content">
             <div class="hero">
-                <div class="hero__text-wrapper">
                     <div class="hero__text">
                         <div>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porta iaculis ante, sed gravida urna tempus eu. Vestibulum fermentum ante eget erat placerat cursus. Cras ultricies elementum placerat. 
@@ -77,8 +76,16 @@
                             <button class="btn btn-primary" type="button">View Gallery</button>
                         </div>
                     </div>
-</div>
-                <img src="img/mountains_stock.jpg" />
+                <img src="images/mountains_stock.jpg" />
+            </div>
+
+            <div class="gallery">
+                <div class="grid">
+                    <div class="grid-sizer"></div>
+                    <div ng-repeat="item in gallery" class="grid-item">
+                        <img class="gallery-item" src="images/{{item.filename}}" />
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -97,9 +104,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="libs/underscore-min.js"></script>
     <script src="libs/isteven/isteven.js"></script>
-    <script src="libs/isteven/isteven.js"></script>
+    <script src="libs/imagesloaded.pkgd.min.js"></script>
+    <script src="libs/isotope.pkgd.min.js"></script>
 
     <!-- Local files -->
     <script type="text/javascript" src="js/index.js"></script>
-</body
+</body>
 </html>
