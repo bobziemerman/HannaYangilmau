@@ -7,8 +7,9 @@ html {
   border-bottom: 1px solid grey;
 }
 
-.header-controls .nav {
+.header-controls .nav__item {
   font-size: 2rem;
+  cursor: pointer;
 }
 
 .header-controls .social {
@@ -19,8 +20,12 @@ html {
   height: 100%;
 }
 
+
+/***************** Hero image ********************/
+
 .hero {
   position: relative;
+  margin-bottom: 6rem;
 }
 
 .hero img {
@@ -40,8 +45,6 @@ html {
   display: inline;
   padding: 2rem;
   position: absolute;
-  top: 10rem;
-  right: 8rem;
   width: 40rem;
   border-radius: 1rem;
   
@@ -58,6 +61,25 @@ button {
   border-radius: 0.5rem;
 }
 
+
+/***************** Categories ********************/
+
+.categories {
+  margin-bottom: 3rem;
+}
+
+.category {
+  display: inline-block;
+  margin: 0 5rem;
+  cursor: pointer;
+}
+
+.category__label {
+  font-size: 2rem;
+}
+
+
+/***************** Gallery ********************/
 .gallery {
   margin: 0 5%;
 }
@@ -69,7 +91,8 @@ button {
 
     .grid-item img {
       max-width: 100%;
-display:block;
+      display: block;
+      padding: 5px;
     }
 
 .footer--mobile {

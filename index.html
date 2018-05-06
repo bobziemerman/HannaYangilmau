@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <link rel="stylesheet" href="libs/isteven/isteven.css">
+    <link rel="stylesheet" href="libs/lightbox/lightbox.min.css">
 
 
     <!-- Custom CSS -->
@@ -26,11 +27,11 @@
                         <div class="nav col-6 center height-100">
                             <div class="row height--100 width--100">
                                 <div class="col-2">&nbsp;</div>
-                                <div class="col-4">
-                                    <a href="#"><u>Gallery</u></a>
+                                <div class="col-4" ng-click="toGallery()">
+                                    <span class="nav__item"><u>Gallery</u></span>
                                 </div>
                                 <div class="col-4">
-                                    <a href="#">Shop</a>
+                                    <span class="nav__item">Shop</span>
                                 </div>
                             </div>
                         </div>
@@ -62,28 +63,51 @@
 
         <div class="content">
             <div class="hero">
-                    <div class="hero__text">
-                        <div>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porta iaculis ante, sed gravida urna tempus eu. Vestibulum fermentum ante eget erat placerat cursus. Cras ultricies elementum placerat. 
-                            <br/>
-                            <br/>
-                            Aliquam pulvinar volutpat ultrices!
-                        </div>
+                    <div class="hero__text" 
+                         ng-if="landingText && landingText.length"
+                         style="top:{{landingText[0].top}}rem; right:{{landingText[0].right}}rem;
+                                bottom:{{landingText[0].bottom}}rem; left:{{landingText[0].left}}rem;">
+                        <div ng-bind-html="landingText[0].text"></div>
 
                         <br/>
 
                         <div class="center">
-                            <button class="btn btn-primary" type="button">View Gallery</button>
+                            <button class="btn btn-primary" type="button" ng-click="toGallery()">
+                                View Gallery
+                            </button>
                         </div>
                     </div>
                 <img src="images/mountains_stock.jpg" />
             </div>
 
             <div class="gallery">
+                <div class="center categories">
+                    <div class="category" ng-click="setCategory('all')">
+                        <i class="fa fa-ellipsis-h fa-4x"></i><br/><span class="category__label">All</span>
+                    </div>
+                    <div class="category" ng-click="setCategory('illustration')">
+                        <i class="far fa-image fa-4x"></i><br/><span class="category__label">Illustrations</span>
+                    </div>
+                    <div class="category" ng-click="setCategory('book')">
+                        <i class="fa fa-book fa-4x"></i><br/><span class="category__label">Books</span>
+                    </div>
+                    <div class="category" ng-click="setCategory('concept')">
+                        <i class="far fa-comment fa-4x"></i><br/><span class="category__label">Concepts</span>
+                    </div>
+
+                </div>
                 <div class="grid">
                     <div class="grid-sizer"></div>
-                    <div ng-repeat="item in gallery" class="grid-item">
-                        <img class="gallery-item" src="images/{{item.filename}}" />
+                    <div ng-repeat="item in gallery" 
+                         ng-class="{illustration: illustration(item.categories), 
+                                    book: book(item.categories), concept: concept(item.categories)}"
+                         class="grid-item">
+                        <a href="images/{{item.filename}}" 
+                           data-lightbox="gallery" 
+                           data-title="{{item.description}}">
+                        <img class="gallery-item" 
+                             src="images/{{item.filename}}" />
+</a>
                     </div>
                 </div>
             </div>
@@ -106,6 +130,7 @@
     <script src="libs/isteven/isteven.js"></script>
     <script src="libs/imagesloaded.pkgd.min.js"></script>
     <script src="libs/isotope.pkgd.min.js"></script>
+    <script src="libs/lightbox/lightbox.min.js"></script>
 
     <!-- Local files -->
     <script type="text/javascript" src="js/index.js"></script>

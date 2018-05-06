@@ -1,2 +1,3 @@
 [06-May-2018 09:42:10 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'bobzieme_admin'@'localhost' (using password: YES) in /home2/hannay/public_html/db/gallery.php on line 11
 [06-May-2018 09:49:51 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'bobzieme_admin'@'localhost' (using password: YES) in /home2/hannay/public_html/db/gallery.php on line 11
+[06-May-2018 11:40:06 America/Chicago] PHP Parse error:  syntax error, unexpected '$result' (T_VARIABLE) in /home2/hannay/public_html/db/gallery.php on line 28
