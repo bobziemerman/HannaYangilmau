@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "bobzieme_admin";
-$password = "hostgatorAdmin1";
-$dbname = "bobzieme_data";
+$username = "hannay_admin";
+$password = "Hanna1234";
+$dbname = "hannay_data";
 
 
 $sql = "SELECT * FROM gallery_item";
