@@ -11,6 +11,9 @@ html {
   font-size: 2rem;
   cursor: pointer;
 }
+  .header-controls .nav__item a {
+    color: black;
+  }
 
 .header-controls .social {
   font-size: 2.6rem;
@@ -25,7 +28,6 @@ html {
 
 .hero {
   position: relative;
-  margin-bottom: 6rem;
 }
 
 .hero img {
@@ -80,8 +82,9 @@ button {
 
 
 /***************** Gallery ********************/
+
 .gallery {
-  margin: 0 5%;
+  margin: 4.5rem 5% 0;
 }
 
 .grid-item,
@@ -98,6 +101,20 @@ button {
 .footer--mobile {
   display: none;
 }
+
+
+/***************** Shop ********************/
+
+.left-panel {
+  display: inline-block;
+  width: 200px;
+}
+
+.shop-items {
+  display: inline-block;
+  width: calc(100% - 210px);
+}
+
 
 
 /***************** MOBILE STYLES TODO *******************/

@@ -27,13 +27,13 @@
                         <div class="nav col-6 center height-100">
                             <div class="row height--100 width--100">
                                 <div class="col-2">&nbsp;</div>
-                                <div class="col-4" ng-click="toGallery()">
-                                    <span class="nav__item"><u>Gallery</u></span>
-                                </div>
                                 <div class="col-4">
                                     <span class="nav__item">
-                                        <a href="shop.html">Shop</a>
-                                   </span>
+                                        <a href="index.html">Gallery</a>
+                                    </span>
+                                </div>
+                                <div class="col-4">
+                                    <span class="nav__item"><u>Shop</u></span>
                                 </div>
                             </div>
                         </div>
@@ -62,24 +62,32 @@
                 </div>
             </div>
         </div>
-
         <div class="content">
-            <div class="hero" ng-if="main">
-                    <div class="hero__text" 
-                         ng-if="landingText && landingText.length"
-                         style="top:{{landingText[0].top}}rem; right:{{landingText[0].right}}rem;
-                                bottom:{{landingText[0].bottom}}rem; left:{{landingText[0].left}}rem;">
-                        <div ng-bind-html="landingText[0].text"></div>
-
-                        <br/>
-
-                        <div class="center">
-                            <button class="btn btn-primary" type="button" ng-click="toGallery()">
-                                View Gallery
-                            </button>
+            <div class="shop">
+                <div class="left-panel">
+                    <div class="row">
+                        <div class="col">
+                            left
                         </div>
                     </div>
-                <img ng-src="images/{{main.filename}}" />
+                </div>
+
+                <div class="shop-items">
+                    <div class="grid">
+                    <div class="grid-sizer"></div>
+                    <div ng-repeat="item in shopItems" 
+                         ng-class="{illustration: illustration(item.categories), 
+                                    book: book(item.categories), concept: concept(item.categories)}"
+                         class="grid-item">
+                        <a href="images/{{item.filename}}" 
+                           data-lightbox="gallery" 
+                           data-title="{{item.description}}">
+                        <img class="gallery-item" 
+                             ng-src="images/{{item.filename}}" />
+</a>
+                        </div>
+                    </div>                
+                </div>
             </div>
 
             <div class="gallery">
@@ -100,17 +108,18 @@
                 </div>
                 <div class="grid">
                     <div class="grid-sizer"></div>
-                    <div ng-repeat="item in gallery" 
-                         ng-if="item.main_image === '0'"
-                         ng-class="{illustration: illustration(item.categories), 
-                                    book: book(item.categories), concept: concept(item.categories)}"
-                         class="grid-item">
-                        <a href="images/{{item.filename}}" 
-                           data-lightbox="gallery" 
-                           data-title="{{item.description}}">
-                            <img class="gallery-item" 
-                                 ng-src="images/{{item.filename}}" />
-                        </a>
+                        <div ng-repeat="item in gallery" 
+                             ng-if="item.main_image === '0'"
+                             ng-class="{illustration: illustration(item.categories), 
+                                        book: book(item.categories), concept: concept(item.categories)}"
+                             class="grid-item">
+                            <a href="images/{{item.filename}}" 
+                               data-lightbox="gallery" 
+                               data-title="{{item.description}}">
+                                <img class="gallery-item" 
+                                     ng-src="images/{{item.filename}}" />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -133,9 +142,10 @@
     <script src="libs/isteven/isteven.js"></script>
     <script src="libs/imagesloaded.pkgd.min.js"></script>
     <script src="libs/isotope.pkgd.min.js"></script>
+    <script src="libs/cells-by-row.js"></script>
     <script src="libs/lightbox/lightbox.min.js"></script>
 
     <!-- Local files -->
-    <script type="text/javascript" src="js/gallery.js"></script>
+    <script type="text/javascript" src="js/shop.js"></script>
 </body>
 </html>
