@@ -62,7 +62,7 @@
         </div>
 
         <div class="content">
-            <div class="hero">
+            <div class="hero" ng-if="main">
                     <div class="hero__text" 
                          ng-if="landingText && landingText.length"
                          style="top:{{landingText[0].top}}rem; right:{{landingText[0].right}}rem;
@@ -77,7 +77,7 @@
                             </button>
                         </div>
                     </div>
-                <img src="images/mountains_stock.jpg" />
+                <img ng-src="images/{{main.filename}}" />
             </div>
 
             <div class="gallery">
@@ -99,6 +99,7 @@
                 <div class="grid">
                     <div class="grid-sizer"></div>
                     <div ng-repeat="item in gallery" 
+                         ng-if="item.main_image === '0'"
                          ng-class="{illustration: illustration(item.categories), 
                                     book: book(item.categories), concept: concept(item.categories)}"
                          class="grid-item">
@@ -106,7 +107,7 @@
                            data-lightbox="gallery" 
                            data-title="{{item.description}}">
                         <img class="gallery-item" 
-                             src="images/{{item.filename}}" />
+                             ng-src="images/{{item.filename}}" />
 </a>
                     </div>
                 </div>

@@ -11,6 +11,14 @@ $scope.width = $(window).width();
     //Get gallery data
     var grid = 'test';
     setData('gallery', 'gallery.php', function(){
+
+        //Get hero image
+        _.each($scope.gallery, function(item){
+            if(item.main_image === '1'){
+                $scope.main = item;
+            }
+        });
+
         //Initialize masonry layout
         grid = $('.grid').imagesLoaded(function(){
             grid.isotope({
