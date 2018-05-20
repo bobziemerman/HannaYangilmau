@@ -4,13 +4,13 @@ app.controller('main', function($scope, $http, $sce) {
 $scope.width = $(window).width();
 
     //Get landing data
-    setData('landingText', 'landing.php', function(){
+    setData('landingText', 'landing_text.php', function(){
         $scope.landingText[0].text = $sce.trustAsHtml($scope.landingText[0].text);
     });
 
     //Get gallery data
     var grid = 'test';
-    setData('gallery', 'gallery.php', function(){
+    setData('gallery', 'gallery_item.php', function(){
 
         //Get hero image
         _.each($scope.gallery, function(item){

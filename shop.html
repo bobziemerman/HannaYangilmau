@@ -65,62 +65,54 @@
         <div class="content">
             <div class="shop">
                 <div class="left-panel">
-                    <div class="row">
-                        <div class="col">
-                            left
+                    <div class="container">
+                        <div class="row" ng-show="showCategories">
+                            <div class="col">
+                                <h3 class="filter-text center">Filter by category:</h3>
+                                <ul class="shop__categories">
+                                    <li class="pointer active shop__category" ng-click="setCategory('all')">
+                                        All ({{allCount}})
+                                    </li>
+                                    <li class="pointer shop__category" 
+                                        ng-if="category.count"
+                                        ng-click="setCategory(category.name)"
+                                        ng-repeat="category in categories">
+                                        {{category.name}} ({{category.count}})
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="shop-items">
-                    <div class="grid">
-                    <div class="grid-sizer"></div>
-                    <div ng-repeat="item in shopItems" 
-                         ng-class="{illustration: illustration(item.categories), 
-                                    book: book(item.categories), concept: concept(item.categories)}"
-                         class="grid-item">
-                        <a href="images/{{item.filename}}" 
-                           data-lightbox="gallery" 
-                           data-title="{{item.description}}">
-                        <img class="gallery-item" 
-                             ng-src="images/{{item.filename}}" />
-</a>
-                        </div>
-                    </div>                
-                </div>
-            </div>
-
-            <div class="gallery">
-                <div class="center categories">
-                    <div class="category" ng-click="setCategory('all')">
-                        <i class="fa fa-ellipsis-h fa-4x"></i><br/><span class="category__label">All</span>
-                    </div>
-                    <div class="category" ng-click="setCategory('illustration')">
-                        <i class="far fa-image fa-4x"></i><br/><span class="category__label">Illustrations</span>
-                    </div>
-                    <div class="category" ng-click="setCategory('book')">
-                        <i class="fa fa-book fa-4x"></i><br/><span class="category__label">Books</span>
-                    </div>
-                    <div class="category" ng-click="setCategory('concept')">
-                        <i class="far fa-comment fa-4x"></i><br/><span class="category__label">Concepts</span>
-                    </div>
-
-                </div>
-                <div class="grid">
-                    <div class="grid-sizer"></div>
-                        <div ng-repeat="item in gallery" 
-                             ng-if="item.main_image === '0'"
-                             ng-class="{illustration: illustration(item.categories), 
-                                        book: book(item.categories), concept: concept(item.categories)}"
-                             class="grid-item">
-                            <a href="images/{{item.filename}}" 
-                               data-lightbox="gallery" 
-                               data-title="{{item.description}}">
-                                <img class="gallery-item" 
-                                     ng-src="images/{{item.filename}}" />
-                            </a>
-                        </div>
-                    </div>
+                    <ul class="shop-cards">
+                        <li class="shop-cards__item" ng-repeat="item in shopItems">
+                            <div class="shop-card" ng-show="showItem(item)">
+                                <div class="shop-card__image">
+                                    <a href="images/{{item.filename}}"
+                                       data-lightbox="gallery"
+                                       data-title="{{item.description}}">
+                                        <img class="gallery-item"
+                                             ng-src="images/{{item.filename}}" />
+                                    </a>
+                                </div>
+                                <div class="shop-card__content">
+                                    <div class="shop-card__title center"><h5>{{item.display_name}}</h5></div>
+                                    <div class="row">
+                                        <div class="col-6 center">
+                                            <h4>${{item.dollar_cost}}</h4> (+shipping)
+                                        </div>
+                                        <div class="col-6">
+                                            <button type="button" class="btn btn-primary btn-lg width--100">
+                                                Buy 
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -135,6 +127,7 @@
 
     <!-- Public libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

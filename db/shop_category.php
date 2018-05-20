@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT item.id, item.description, item.filename, IFNULL(GROUP_CONCAT(category.name SEPARATOR ', '), '') AS categories FROM `shop_item` AS item LEFT JOIN `shop_item-category` AS itemCategory ON itemCategory.item_id = item.id LEFT JOIN `shop_category` AS category ON category.id = itemCategory.category_id GROUP BY item.id";
+$sql = "SELECT * FROM `shop_category`";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

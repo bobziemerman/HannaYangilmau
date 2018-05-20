@@ -3,45 +3,59 @@ app.controller('main', function($scope, $http, $sce) {
     console.log('sanity');
 $scope.width = $(window).width();
 
+    $scope.category = 'all';
+
     //Get shop data
     var grid = 'test';
-    setData('shopItems', 'shop.php', function(){
+    setData('shopItems', 'shop_item.php', function(){
 
-        //Initialize masonry layout
         grid = $('.grid').imagesLoaded(function(){
             grid.isotope({
                 itemSelector: '.grid-item',
                 layoutMode: 'cellsByRow',
                 cellsByRow: {
-                    columnWidth: 400
+                    columnWidth: 400,
+                    rowHaight: 800
                 }
             });
         });
 
-        //Spread grid
         setTimeout(function(){
             grid.isotope('layout');
         }, 100);
-        //backup spread
         setTimeout(function(){
             grid.isotope('layout');
         }, 1000);
 
-        //Reinit lightbox
         lightbox.option({});
+
+        //Get shop categories
+        setData('categories', 'shop_category.php', function(){
+            $scope.allCount = 0;
+            _.each($scope.categories, function(category){
+                category.count = 0;
+                _.each($scope.shopItems, function(item){
+                    $scope.allCount++;
+                    if(item.categories && item.categories.indexOf(category.name) >=0){
+                        category.count++;
+                        $scope.showCategories = true;
+                    }
+                });
+            });
+        });
     });
 
     //Change category
     $scope.setCategory = function(category){
+console.log(category);
         if(category){
-            if(category === 'all') {
-                delete $scope.category;
-                grid.isotope({filter:'*'});
-            } else {
-                $scope.category = category;
-                grid.isotope({filter:'.'+category});
-            }
+            $('.active').removeClass('active');
+            $scope.category = category;
         }
+    }
+
+    $scope.showItem = function(item){
+        return ($scope.category === 'all' || item.categories.indexOf($scope.category) >=0);
     }
 
     //Category helpers
