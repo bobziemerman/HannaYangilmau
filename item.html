@@ -33,7 +33,9 @@
                                     </span>
                                 </div>
                                 <div class="col-4">
-                                    <span class="nav__item"><u>Shop</u></span>
+                                    <span class="nav__item">
+                                        <a href="shop.html"><u>Shop</u></a>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -63,79 +65,27 @@
             </div>
         </div>
         <div class="content">
-            <div class="shop">
-                <div class="left-panel">
-                    <div class="container">
+            <div class="item">
+                <div class="item-page center">
+                    <div class="item-page__image">
+                        <a href="images/{{item.filename}}"
+                           data-lightbox="gallery"
+                           data-title="{{item.description}}">
+                            <img ng-src="images/{{item.filename}}" />
+                        </a>
+                    </div>
+                    <div class="item-page__content">
+                        <div class="item-page__title center"><h2>{{item.display_name}}</h2></div>
+                        <div class="item-page__desc center" ng-if="item.description">{{item.description}}</div>
                         <div class="row">
-                            <div class="col">
-                                <h3 class="sort-text center">Sort By:</h3>
-                                <ul class="shop__categories">
-                                    <li class="active--sort sort--display_name pointer shop__sort" 
-                                        ng-click="sortBy('display_name')">Name</li>
-                                    <li class="pointer sort--dollar_cost shop__sort" 
-                                        ng-click="sortBy('dollar_cost')">Price</li>
-                                    <li class="pointer sort--categories shop__sort" 
-                                        ng-click="sortBy('categories')">Category</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row" ng-show="showCategories">
-                            <div class="col">
-                                <h3 class="filter-text center">Filter by category:</h3>
-                                <ul class="shop__categories">
-                                    <li class="pointer active--category shop__category" 
-                                        ng-click="setCategory($event, 'all')">
-                                        All ({{shopItems.length}})
-                                    </li>
-                                    <li class="pointer shop__category" 
-                                        ng-if="category.count"
-                                        ng-click="setCategory($event, category.name)"
-                                        ng-repeat="category in categories">
-                                        {{category.name}} ({{category.count}})
-                                    </li>
-                                </ul>
+                            <div class="col-12">
+                                <div class="inline-block">
+                                    <h4 class="center">${{item.dollar_cost}}</h4> (+shipping)
+                                </div>
+                                <div id="item-button" class="item-button inline-block"></div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="shop-items">
-                    <ul class="shop-cards">
-                        <li class="shop-cards__item"
-                            ng-repeat="item in shopItems | orderBy:sortType:reverseSort"
-                            ng-show="showItem(item)"
-                            data-price="{{item.dollar_cost}}">
-                            <div class="shop-card">
-                                <div class="shop-card__image">
-                                    <a href="images/{{item.filename}}"
-                                       data-lightbox="gallery"
-                                       data-title="{{item.description}}">
-                                        <img class="gallery-item"
-                                             ng-src="images/{{item.filename}}" />
-                                    </a>
-                                </div>
-                                <div class="shop-card__content">
-                                    <div class="shop-card__title center"><h5>{{item.display_name}}</h5></div>
-                                    <div class="row">
-                                        <div class="col-1"></div>
-                                        <div class="col-5">
-                                            <h4 class="center">${{item.dollar_cost}}</h4>
-                                            <div class="center">(+shipping)</div>
-                                        </div>
-                                        <div class="col-5">
-                                            <!--div id="{{makeId(item)}}" class="center"></div-->
-                                            <a href="item.html?id={{item.id}}">
-                                                <button type="button" 
-                                                        class="btn btn-primary btn-lg width--100">
-                                                    View Details
-                                                </button>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -163,6 +113,6 @@
     <script src="libs/lightbox/lightbox.min.js"></script>
 
     <!-- Local files -->
-    <script type="text/javascript" src="js/shop.js"></script>
+    <script type="text/javascript" src="js/item.js"></script>
 </body>
 </html>

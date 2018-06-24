@@ -126,18 +126,22 @@ button {
   margin-top: 50px;
 }
 
-.filter-text {
+.active--sort,
+.active--category {
+  text-decoration: underline
+}
+
+.filter-text,
+.sort-text {
+  text-align: left;
   margin-bottom: 10px;
 }
 
-.shop__category {
+.shop__category,
+.shop__sort {
   list-style: none;
   font-size: 1.8rem;
 }
-
-    .shop__category.active {
-      text-decoration: underline;
-    }
 
 .shop-items {
   display: inline-block;
@@ -211,6 +215,36 @@ button {
               -ms-transform: translate(-50%,-50%);
                   transform: translate(-50%,-50%);
         }
+
+
+
+
+
+/***************** Item ********************/
+
+.item-page {
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+    max-width: 750px;
+}
+
+.item-page__image img {
+    max-width: 100%;
+}
+
+.item-page__title {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.item-page__desc {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.item-button {
+    margin-left: 15px;
+}
 
 
 
