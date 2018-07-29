@@ -35,7 +35,8 @@ console.log($scope.item);
     function renderButton(){
         if($scope.item){
             paypal.Button.render({
-                env: 'sandbox', //TODO switch to 'production'
+                //env: 'sandbox', //TODO switch to 'production'
+                env: 'production',
                 client: {
                     sandbox: 'AQxSau5bKdkOlwwnYvQoVfIWo-KQsXvqEGXOe908C0OIslAfkf1Zm3OgV8tQ2O5TNQiTw44wL-5j-k-Y',
                     production: 'ATSTFWdEhVBdyPhlUDj8uG7LYmJSZ5AHECkn2z7V7TZFYbO0RQj7X2otacoLVkY_oCDriuXvSS2Bq-kZ'
@@ -55,8 +56,19 @@ console.log($scope.item);
                     return actions.payment.create({
                         payment: {
                             transactions: [{
-                                amount: {total: $scope.item.dollar_cost, currency: 'USD'},
-                                description: 'id'+$scope.id+': '+$scope.item.display_name
+                                amount: {
+                                    total: parseFloat($scope.item.dollar_cost) + 
+                                           parseFloat($scope.item.shipping_cost) + 
+                                           parseFloat($scope.item.tax_cost), 
+                                    currency: 'USD',
+                                    details: {
+                                        subtotal: $scope.item.dollar_cost,
+                                        shipping: $scope.item.shipping_cost,
+                                        tax: $scope.item.tax_cost
+                                    }
+                                },
+                                description: $scope.item.display_name,
+                                reference_id: $scope.item.id
                             }]
                         }
                     });

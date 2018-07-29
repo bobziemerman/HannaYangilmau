@@ -121,7 +121,10 @@
                                         <div class="col-1"></div>
                                         <div class="col-5">
                                             <h4 class="center">${{item.dollar_cost}}</h4>
-                                            <div class="center">(+shipping)</div>
+                                            <div class="center" 
+                                                 ng-if="item.tax_cost != 0 || item.shipping_cost != 0">
+                                                (+tax/shipping)
+                                            </div>
                                         </div>
                                         <div class="col-5">
                                             <a href="item.html?id={{item.id}}">
