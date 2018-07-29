@@ -216,15 +216,43 @@ button {
                   transform: translate(-50%,-50%);
         }
 
+.img-container,
+.img-container:hover,
+.img-container--lg,
+.img-container--lg:hover {
+    position: relative;
+    text-align: center;
+    color: white;
+    text-shadow: 0.3rem 0.3rem 0.5rem black;
+    font-size: 3rem;
+}
+
+.img-container--lg,
+.img-container--lg:hover {
+    font-size: 6rem;
+}
+
+.sold-out,
+.sold-out:hover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(335deg);
+}
+
 
 
 
 
 /***************** Item ********************/
 
+.back-shop {
+    margin-top: 2rem;
+}
+
 .item-page {
-    margin-top: 5rem;
-    margin-bottom: 4rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     max-width: 750px;
 }
 
@@ -244,6 +272,10 @@ button {
 
 .item-button {
     margin-left: 15px;
+}
+
+.modal {
+    font-size: 1.6rem;
 }
 
 

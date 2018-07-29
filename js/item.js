@@ -56,7 +56,7 @@ console.log($scope.item);
                         payment: {
                             transactions: [{
                                 amount: {total: $scope.item.dollar_cost, currency: 'USD'},
-                                description: $scope.item.display_name
+                                description: 'id'+$scope.id+': '+$scope.item.display_name
                             }]
                         }
                     });
@@ -69,14 +69,22 @@ console.log($scope.item);
                     return actions.payment.execute().then(function(payment){
                         console.log('payment complete');
                         console.log(payment);
-                        //TODO confirmation page
+                        if($scope.item.quantity > 0){
+                            decrementQuantity();
+                        }
+                        openConfModal();
                     });
                 },
-                onCancel: function(data, actions){},
+                onCancel: function(data, actions){
+                        if($scope.item.quantity > 0){
+                            decrementQuantity();
+                        }
+
+},
                 onError: function(err){
-                    console.log('err');
+                    console.log('paypal error:');
                     console.log(err);
-                    //TODO show error popup
+                    openErrModal();
                 }
             }, '#item-button');
         };
@@ -94,6 +102,18 @@ console.log($scope.item);
                 thenFunction();
             }
         });
+    }
+
+    function decrementQuantity(){
+        $.get('/db/dec_shop_item.php?id='+$scope.item.id);
+    }
+
+    function openConfModal(){
+        $('#js-paypal-conf-modal').modal();
+    }
+
+    function openErrModal(){
+        $('#js-paypal-err-modal').modal();
     }
 
 });

@@ -65,19 +65,37 @@
             </div>
         </div>
         <div class="content">
+            <div class="back-shop center">
+                <h3>
+                    <a href="/shop.html">
+                        <i class="fas fa-angle-double-left"></i> Back to Shop
+                    </a>
+                </h3>
+            </div>
             <div class="item">
                 <div class="item-page center">
                     <div class="item-page__image">
                         <a href="images/{{item.filename}}"
+                           class="img-container--lg"
                            data-lightbox="gallery"
                            data-title="{{item.description}}">
                             <img ng-src="images/{{item.filename}}" />
+                            <div class="sold-out" ng-if="item.quantity == 0 ">SOLD OUT</div>
                         </a>
                     </div>
                     <div class="item-page__content">
-                        <div class="item-page__title center"><h2>{{item.display_name}}</h2></div>
-                        <div class="item-page__desc center" ng-if="item.description">{{item.description}}</div>
-                        <div class="row">
+                        <div class="item-page__title center">
+                            <h2>
+                                {{item.display_name}} 
+                            </h2>
+                        </div>
+                        <div class="item-page__desc center" ng-if="item.description">
+                            {{item.description}}
+                            <span ng-if="item.quantity && item.quantity > 0">
+                                (Only {{item.quantity}} left!)
+                            </span>
+                        </div>
+                        <div class="row" ng-show="item.quantity != 0">
                             <div class="col-12">
                                 <div class="inline-block">
                                     <h4 class="center">${{item.dollar_cost}}</h4> (+shipping)
@@ -85,6 +103,47 @@
                                 <div id="item-button" class="item-button inline-block"></div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paypal confirmation modal -->
+        <div id="js-paypal-conf-modal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Purchase Confirmed</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Thanks for your purchase! I'll have it delivered to you ASAP, but feel free to reach out with any questions or concerns at <a href="mailto:hanna@heyangilmau.com">hanna@heyangilmau.com</a>.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-lg btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paypal error modal -->
+        <div id="js-paypal-err-modal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Paypal Error</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>I'm sorry; something went wrong with your order, and no purchase was made.</p>
+                        <p>Please try again, and if problems keep happening, reach out, and let me know at <a href="mailto:hanna@heyangilmau.com">hanna@heyangilmau.com</a>. Thanks!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-lg btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>

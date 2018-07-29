@@ -112,22 +112,22 @@
                                        data-title="{{item.description}}">
                                         <img class="gallery-item"
                                              ng-src="images/{{item.filename}}" />
+                                        <div class="img-container sold-out" ng-if="item.quantity == 0 ">SOLD OUT</div>
                                     </a>
                                 </div>
                                 <div class="shop-card__content">
                                     <div class="shop-card__title center"><h5>{{item.display_name}}</h5></div>
-                                    <div class="row">
+                                    <div class="row" ng-if="item.quantity != 0">
                                         <div class="col-1"></div>
                                         <div class="col-5">
                                             <h4 class="center">${{item.dollar_cost}}</h4>
                                             <div class="center">(+shipping)</div>
                                         </div>
                                         <div class="col-5">
-                                            <!--div id="{{makeId(item)}}" class="center"></div-->
                                             <a href="item.html?id={{item.id}}">
                                                 <button type="button" 
                                                         class="btn btn-primary btn-lg width--100">
-                                                    View Details
+                                                    Buy
                                                 </button>
                                             </a>
                                         </div>
