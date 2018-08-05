@@ -2,6 +2,10 @@ html {
   font-size: 10px;
 }
 
+body {
+  font-family: 'Molengo', sans-serif !important;
+}
+
 .header {
   height: 16rem;
   border-bottom: 1px solid grey;
