@@ -3,8 +3,13 @@ html {
 }
 
 .header {
-  height: 15rem;
+  height: 16rem;
   border-bottom: 1px solid grey;
+}
+
+.header-controls .nav,
+.header-controls .social {
+  height: 3.5rem;
 }
 
 .header-controls .nav__item {
@@ -14,6 +19,69 @@ html {
   .header-controls .nav__item a {
     color: black;
   }
+
+.nav-link {
+  height: 100%;
+  background-size: contain !important;
+  display: block;
+}
+
+.gallery-link {
+  background: transparent url('/images/gallery_bw.jpg') center no-repeat;
+}
+
+    .gallery-link.active,
+    .gallery-link:hover {
+      background: transparent url('/images/gallery_color.jpg') center no-repeat;
+    }
+
+.shop-link {
+  background: transparent url('/images/shop_bw.jpg') center no-repeat;
+}
+
+    .shop-link.active,
+    .shop-link:hover,
+    .shop-link.preload {
+      background: transparent url('/images/shop_color.jpg') center no-repeat;
+    }
+
+.fb-link {
+  background: transparent url('/images/fb_bw.jpg') center no-repeat;
+}
+
+    .fb-link:hover,
+    .fb-link.preload {
+      background: transparent url('/images/fb_color.jpg') center no-repeat;
+    }
+
+.insta-link {
+  background: transparent url('/images/insta_bw.jpg') center no-repeat;
+}
+
+    .insta-link:hover,
+    .insta-link.preload {
+      background: transparent url('/images/insta_color.jpg') center no-repeat;
+    }
+
+.tumblr-link {
+  background: transparent url('/images/tumblr_bw.jpg') center no-repeat;
+}
+
+    .tumblr-link:hover,
+    .tumblr-link.preload {
+      background: transparent url('/images/tumblr_color.jpg') center no-repeat;
+    }
+
+.twitter-link {
+  background: transparent url('/images/twitter_bw.jpg') center no-repeat;
+}
+
+    .twitter-link:hover,
+    .twitter-link.preload {
+      background: transparent url('/images/twitter_color.jpg') center no-repeat;
+    }
+
+
 
 .header-controls .social {
   font-size: 2.6rem;

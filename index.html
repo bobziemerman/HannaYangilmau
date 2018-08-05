@@ -20,40 +20,47 @@
         <div class="header">
             <div class="full-width row height--100">
                 <div class="col-12 col-md-6 center--v">
-                    <h2 class="center">Hanna Yangilmau {{width}}</h2>
+                    <h2 class="center">
+                        <a href="index.html">
+                            <img src="images/header_desktop.jpg"/>
+                        </a>
+                    </h2>
                 </div>
                 <div class="header-controls col-sm-6 height--100">
                     <div class="row height--100">
-                        <div class="nav col-6 center height-100">
+                        <div class="nav col-6 center">
                             <div class="row height--100 width--100">
-                                <div class="col-2">&nbsp;</div>
-                                <div class="col-4" ng-click="toGallery()">
-                                    <span class="nav__item"><u>Gallery</u></span>
+                                <div class="col-6" ng-click="toGallery()">
+                                    <span class="nav__item nav-link gallery-link active"></span>
                                 </div>
-                                <div class="col-4">
-                                    <span class="nav__item">
-                                        <a href="shop.html">Shop</a>
-                                   </span>
+                                <div class="col-6">
+                                    <a href="shop.html">
+                                        <span class="nav__item nav-link shop-link"></span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="social col-6">
+                        <div class="social col-6 center">
                             <div class="row center height--100">
-                                <div class="col-3 center--v">&nbsp;</div>
-                                <div class="col-2 center--v">
-                                    <a href="TODO">
-                                        <i class="fab fa-twitter-square"></i>
+                                <div class="col-3">
+                                    <a href="https://www.facebook.com/heyangilmau">
+                                        <span class="nav-link fb-link"></span>
                                     </a>
                                 </div>
-                                <div class="col-2 center--v">
-                                    <a class="center--v" href="TODO">
-                                        <i class="fab fa-instagram"></i>
+                                <div class="col-3">
+                                    <a href="https://www.instagram.com/heyangilmau">
+                                        <span class="nav-link insta-link"></span>
                                     </a>
                                 </div>
-                                <div class="col-2 center--v">
-                                    <a class="center--v" href="TODO">
-                                        <i class="fab fa-tumblr-square"></i>
+                                <div class="col-3">
+                                    <a href="https://heyangilmau.tumblr.com">
+                                        <span class="nav-link tumblr-link"></span>
+                                    </a>
+                                </div>
+                                <div class="col-3">
+                                    <a href="https://twitter.com/heyangilmau">
+                                        <span class="nav-link twitter-link"></span>
                                     </a>
                                 </div>
                             </div>
@@ -114,6 +121,15 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="hidden">
+            <span class="gallery-link preload"></span>
+            <span class="shop-link preload"></span>
+            <span class="fb-link preload"></span>
+            <span class="insta-link preload"></span>
+            <span class="tumblr-link preload"></span>
+            <span class="twitter-link preload"></span>
         </div>
 
         <div class="footer--mobile center">
