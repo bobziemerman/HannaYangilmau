@@ -20,19 +20,17 @@
     <div class="main" ng-app="hanna" ng-controller="main">
         <div class="header">
             <div class="full-width row height--100">
-                <div class="col-12 col-md-6 center--v">
-                    <h2 class="center">
-                        <a href="index.html">
-                            <img src="images/header_desktop.jpg"/>
-                        </a>
-                    </h2>
+                <div class="col-12 col-sm-6 center--v height--100 height--xs--50">
+                    <a class="height--100" href="index.html">
+                        <span class="logo"></span>
+                    </a>
                 </div>
-                <div class="header-controls col-sm-6 height--100">
+                <div class="header-controls col-12 col-sm-6 height--100 height--xs--50">
                     <div class="row height--100">
-                        <div class="nav col-6 center">
+                        <div class="nav col-12 col-lg-6 center">
                             <div class="row height--100 width--100">
                                 <div class="col-6">
-                                    <a href="shop.html">
+                                    <a href="index.html">
                                         <span class="nav__item nav-link gallery-link"></span>
                                     </a>
                                 </div>
@@ -79,7 +77,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col">
-                                <h3 class="sort-text center">Sort By:</h3>
+                                <h3 class="sort-text center"><b>Sort By:</b></h3>
                                 <ul class="shop__categories">
                                     <li class="active--sort sort--display_name pointer shop__sort" 
                                         ng-click="sortBy('display_name')">Name</li>
@@ -92,7 +90,7 @@
                         </div>
                         <div class="row" ng-show="showCategories">
                             <div class="col">
-                                <h3 class="filter-text center">Filter by category:</h3>
+                                <h3 class="filter-text center"><b>Filter by category:</b></h3>
                                 <ul class="shop__categories">
                                     <li class="pointer active--category shop__category" 
                                         ng-click="setCategory($event, 'all')">
@@ -109,6 +107,8 @@
                         </div>
                     </div>
                 </div>
+
+                <span class="md-breaker"><br/></span>
 
                 <div class="shop-items">
                     <ul class="shop-cards">
@@ -127,21 +127,21 @@
                                     </a>
                                 </div>
                                 <div class="shop-card__content">
-                                    <div class="shop-card__title center"><h5>{{item.display_name}}</h5></div>
+                                    <div class="shop-card__title center"><h2>{{item.display_name}}</h2></div>
                                     <div class="row" ng-if="item.quantity != 0">
                                         <div class="col-1"></div>
                                         <div class="col-5">
-                                            <h4 class="center">${{item.dollar_cost}}</h4>
+                                            <h2 class="center">${{item.dollar_cost}}</h2>
                                             <div class="center" 
                                                  ng-if="item.tax_cost != 0 || item.shipping_cost != 0">
-                                                (+tax/shipping)
+                                                <h4>(+tax/shipping)</h4>
                                             </div>
                                         </div>
                                         <div class="col-5">
                                             <a href="item.html?id={{item.id}}">
                                                 <button type="button" 
                                                         class="btn btn-primary btn-lg width--100">
-                                                    Buy
+                                                    <h2>Buy</h2>
                                                 </button>
                                             </a>
                                         </div>
@@ -164,7 +164,30 @@
         </div>
 
         <div class="footer--mobile center">
-            mobile footer
+            <div class="social col-12 col-sm-6 center height--100">
+                <div class="row center height--100">
+                    <div class="col-3">
+                        <a href="https://www.facebook.com/heyangilmau">
+                            <span class="nav-link fb-link"></span>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a href="https://www.instagram.com/heyangilmau">
+                            <span class="nav-link insta-link"></span>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a href="https://heyangilmau.tumblr.com">
+                            <span class="nav-link tumblr-link"></span>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a href="https://twitter.com/heyangilmau">
+                            <span class="nav-link twitter-link"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

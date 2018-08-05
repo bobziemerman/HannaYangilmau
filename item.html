@@ -20,16 +20,14 @@
     <div class="main" ng-app="hanna" ng-controller="main">
         <div class="header">
             <div class="full-width row height--100">
-                <div class="col-12 col-md-6 center--v">
-                    <h2 class="center">
-                        <a href="index.html">
-                            <img src="images/header_desktop.jpg"/>
-                        </a>
-                    </h2>
+                <div class="col-12 col-sm-6 center--v height--100 height--xs--50">
+                    <a class="height--100" href="index.html">
+                        <span class="logo"></span>
+                    </a>
                 </div>
-                <div class="header-controls col-sm-6 height--100">
+                <div class="header-controls col-12 col-sm-6 height--100 height--xs--50">
                     <div class="row height--100">
-                        <div class="nav col-6 center">
+                        <div class="nav col-12 col-lg-6 center">
                             <div class="row height--100 width--100">
                                 <div class="col-6">
                                     <a href="index.html">
@@ -94,20 +92,23 @@
                     </div>
                     <div class="item-page__content">
                         <div class="item-page__title center">
-                            <h2>
+                            <h1>
                                 {{item.display_name}} 
-                            </h2>
+                            </h1>
                         </div>
                         <div class="item-page__desc center" ng-if="item.description">
-                            {{item.description}}
-                            <span ng-if="item.quantity && item.quantity > 0">
-                                (Only {{item.quantity}} left!)
-                            </span>
+                            <h2>
+                                {{item.description}}
+                                <span ng-if="item.quantity && item.quantity > 0">
+                                   (Only {{item.quantity}} left!)
+                                </span>
+                            </h2>
                         </div>
                         <div class="row" ng-show="item.quantity != 0">
                             <div class="col-12">
                                 <div class="inline-block">
-                                    <h4 class="center">${{item.dollar_cost}}</h4> (+shipping)
+                                    <h1 class="center">${{item.dollar_cost}}</h1>
+                                    <h3> (+shipping)</h3>
                                 </div>
                                 <div id="item-button" class="item-button inline-block"></div>
                             </div>
@@ -128,7 +129,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Thanks for your purchase! I'll have it delivered to you ASAP, but feel free to reach out with any questions or concerns at <a href="mailto:hanna@heyangilmau.com">hanna@heyangilmau.com</a>.</p>
+                        <p>Thanks for your purchase! I'll have it delivered to you ASAP, but feel free to reach out with any questions or concerns at <a href="mailto:heyangilmau@gmail.com">heyangilmau@gmail.com</a>.</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-lg btn-secondary" data-dismiss="modal">Close</button>
@@ -149,7 +150,7 @@
                     </div>
                     <div class="modal-body">
                         <p>I'm sorry; something went wrong with your order, and no purchase was made.</p>
-                        <p>Please try again, and if problems keep happening, reach out, and let me know at <a href="mailto:hanna@heyangilmau.com">hanna@heyangilmau.com</a>. Thanks!</p>
+                        <p>Please try again, and if problems keep happening, reach out, and let me know at <a href="mailto:heyangilmau@gmail.com">heyangilmau@gmail.com</a>. Thanks!</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-lg btn-secondary" data-dismiss="modal">Close</button>
@@ -168,7 +169,30 @@
         </div>
 
         <div class="footer--mobile center">
-            mobile footer
+            <div class="social col-12 col-sm-6 center height--100">
+                <div class="row center height--100">
+                    <div class="col-3">
+                        <a href="https://www.facebook.com/heyangilmau">
+                            <span class="nav-link fb-link"></span>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a href="https://www.instagram.com/heyangilmau">
+                            <span class="nav-link insta-link"></span>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a href="https://heyangilmau.tumblr.com">
+                            <span class="nav-link tumblr-link"></span>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a href="https://twitter.com/heyangilmau">
+                            <span class="nav-link twitter-link"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

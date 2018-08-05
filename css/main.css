@@ -24,6 +24,11 @@ body {
     color: black;
   }
 
+.logo {
+  background: transparent url('/images/header_desktop.jpg') center no-repeat;
+}
+
+.logo,
 .nav-link {
   height: 100%;
   background-size: contain !important;
@@ -84,8 +89,6 @@ body {
     .twitter-link.preload {
       background: transparent url('/images/twitter_color.jpg') center no-repeat;
     }
-
-
 
 .header-controls .social {
   font-size: 2.6rem;
@@ -355,52 +358,106 @@ button {
 /***************** MOBILE STYLES TODO *******************/
 
 @media only screen and (max-width: 1600px) {
-    .grid-item,
-    .grid-sizer {
-      width: 25%;
-    }
+  .grid-item,
+  .grid-sizer {
+    width: 25%;
+  }
 }
 
 @media only screen and (max-width: 1200px) {
-    .grid-item,
-    .grid-sizer {
-      width: 33.3%;
-    }
+  .grid-item,
+  .grid-sizer {
+    width: 33.3%;
+  }
+
+  .header-controls .nav,
+  .header-controls .social {
+      height: 2.5rem;
+  }
 }
 
-@media only screen and (max-width: 950px) {
-    .grid-item,
-    .grid-sizer {
-      width: 50%;
-    }
+/* 992px = bootstrap lg */
+@media only screen and (max-width: 992px) {
+  html {
+    font-size: 16px;
+  }
+  .grid-item,
+  .grid-sizer {
+    width: 50%;
+  }
 
-    .hero {
-        display: none;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .grid-item,
-    .grid-sizer {
-      width: 100%;
-    }
-}
-
-
-
-/*TODO FIX*/
-@media only screen and (max-width: 1000px) {
-
-  .header-controls {
+  .header-controls .social {
     display: none;
   }
 
-  .footer__mobile {
-    position: absolute;
+  .header-controls .nav,
+  .header-controls .social {
+      height: 3.5rem;
+  }
+
+  .md-breaker {
+    display: block;
+  }
+
+  .content {
+    margin-bottom: 7rem;
+  }
+
+  .footer--mobile {
+    display: block;
+    background: white;
+    position: fixed;
     bottom: 0;
-    height: 4rem;
+    height: 7rem;
     width: 100%;
     border-top: 1px solid grey;
+    padding: 0.7rem;
+    z-index: 100;
+  }
+}
+
+/* 768px = boostrap md */
+@media only screen and (max-width: 768px) {
+  .hero {
+    display: none;
+  }
+
+  .shop {
+    flex-direction: column;
+  }
+
+  .left-panel {
+    width: 100%;
+    text-align: center;
+  }
+
+  .sort-text,
+  .filter-text {
+    text-align: center !important;
+  }
+
+  .shop__categories {
+    padding: 0;
+  }
+
+  .shop-items {
+    width: 100%;
+  }
+}
+
+/* 576ps = bootstrap sm */
+@media only screen and (max-width: 576px) {
+  .grid-item,
+  .grid-sizer {
+    width: 100%;
+  }
+
+  .height--xs--50 {
+    height: 50%;
+  }
+
+  .logo {
+    margin: 10px;
   }
 }
 
@@ -410,5 +467,9 @@ button {
 .full-width.row {
   margin-left: 0 !important;
   margin-right: 0 !important;
+}
+
+.nav {
+  padding-left: 15px;
 }
 

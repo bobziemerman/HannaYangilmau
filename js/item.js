@@ -45,7 +45,7 @@ console.log($scope.item);
                 style: {
                     color: 'blue',
                     shape: 'rect',
-                    size: 'medium',
+                    size: 'large',
                     tagline: false
                 },
                 payment: function(data, actions){
