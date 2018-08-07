@@ -29,7 +29,8 @@ body {
 }
 
 .logo,
-.nav-link {
+.nav-link,
+.gallery .category span {
   height: 100%;
   background-size: contain !important;
   display: block;
@@ -89,6 +90,43 @@ body {
     .twitter-link.preload {
       background: transparent url('/images/twitter_color.jpg') center no-repeat;
     }
+
+.all-cats {
+  background: transparent url('/images/all_bw.jpg') center no-repeat;
+  width: 6rem;
+}
+
+    .all-cats:hover,
+    .all-cats.active,
+    .all-cats.preload {
+      background: transparent url('/images/all_color.jpg') center no-repeat;
+    }
+
+.illustration-cat {
+  background: transparent url('/images/illustrations_bw.jpg') center no-repeat;
+  width: 21rem;
+}
+
+    .illustration-cat:hover,
+    .illustration-cat.active,
+    .illustration-cat.preload {
+      background: transparent url('/images/illustrations_color.jpg') center no-repeat;
+    }
+
+.sketch-cat {
+  background: transparent url('/images/sketches_bw.jpg') center no-repeat;
+  width: 16rem;
+}
+
+    .sketch-cat:hover,
+    .sketch-cat.active,
+    .sketch-cat.preload {
+      background: transparent url('/images/sketches_color.jpg') center no-repeat;
+    }
+
+.gallery .category {
+  height: 4rem;
+}
 
 .header-controls .social {
   font-size: 2.6rem;

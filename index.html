@@ -91,19 +91,17 @@
             <div class="gallery">
                 <div class="center categories">
                     <div class="category" ng-click="setCategory('all')">
-                        <i class="fa fa-ellipsis-h fa-4x"></i><br/><span class="category__label">All</span>
-                    </div>
-                    <div class="category" ng-click="setCategory('illustration')">
-                        <i class="far fa-image fa-4x"></i><br/><span class="category__label">Illustrations</span>
+                        <span class="all-cats active"></span>
                     </div>
 
                     <span class="md-breaker hidden"><br/></span>
 
-                    <div class="category" ng-click="setCategory('book')">
-                        <i class="fa fa-book fa-4x"></i><br/><span class="category__label">Books</span>
+                    <div class="category" ng-click="setCategory('illustration')">
+                        <span class="illustration-cat"></span>
                     </div>
-                    <div class="category" ng-click="setCategory('concept')">
-                        <i class="far fa-comment fa-4x"></i><br/><span class="category__label">Concepts</span>
+
+                    <div class="category" ng-click="setCategory('sketch')">
+                        <span class="sketch-cat"></span>
                     </div>
 
                 </div>
@@ -112,7 +110,7 @@
                     <div ng-repeat="item in gallery" 
                          ng-if="item.main_image === '0'"
                          ng-class="{illustration: illustration(item.categories), 
-                                    book: book(item.categories), concept: concept(item.categories)}"
+                                    sketch: sketch(item.categories)}"
                          class="grid-item">
                         <a href="images/{{item.filename}}" 
                            data-lightbox="gallery" 

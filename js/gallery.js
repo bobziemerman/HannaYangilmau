@@ -47,9 +47,13 @@ $scope.width = $(window).width();
     $scope.setCategory = function(category){
         if(category){
             if(category === 'all') {
+                $('.category .active').removeClass('active');
+                $('.all-cats').addClass('active');
                 delete $scope.category;
                 grid.isotope({filter:'*'});
             } else {
+                $('.category .active').removeClass('active');
+                $('.'+category+'-cat').addClass('active');
                 $scope.category = category;
                 grid.isotope({filter:'.'+category});
             }
@@ -57,8 +61,7 @@ $scope.width = $(window).width();
     }
 
     //Category helpers
-    $scope.book = function(categories){ return categories.includes('book') };
-    $scope.concept = function(categories){ return categories.includes('concept') };
+    $scope.sketch = function(categories){ return categories.includes('sketch') };
     $scope.illustration = function(categories){ return categories.includes('illustration') };
 
     $scope.toGallery = function(){
