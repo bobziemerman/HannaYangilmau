@@ -36,12 +36,12 @@
                                 </div>
                                 <div class="col-4">
                                     <a href="shop.html">
-                                        <span class="nav__item nav-link shop-link active"></span>
+                                        <span class="nav__item nav-link shop-link"></span>
                                     </a>
                                 </div>
                                 <div class="col-4">
                                     <a href="about.html">
-                                        <span class="nav__item nav-link about-link"></span>
+                                        <span class="nav__item nav-link about-link active"></span>
                                     </a>
                                 </div>
                             </div>
@@ -77,95 +77,12 @@
         </div>
 
         <div class="content">
-            <div class="shop">
-                <div class="left-panel">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <h3 class="sort-text center"><b>Sort By:</b></h3>
-                                <ul class="shop__categories">
-                                    <li class="active--sort sort--display_name pointer shop__sort" 
-                                        ng-click="sortBy('display_name')">Name</li>
-                                    <li class="pointer sort--dollar_cost shop__sort" 
-                                        ng-click="sortBy('dollar_cost')">Price</li>
-                                    <li class="pointer sort--categories shop__sort" 
-                                        ng-click="sortBy('categories')">Category</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row" ng-show="showCategories">
-                            <div class="col">
-                                <h3 class="filter-text center"><b>Filter by category:</b></h3>
-                                <ul class="shop__categories">
-                                    <li class="pointer active--category shop__category" 
-                                        ng-click="setCategory($event, 'all')">
-                                        All ({{shopItems.length}})
-                                    </li>
-                                    <li class="pointer shop__category" 
-                                        ng-if="category.count"
-                                        ng-click="setCategory($event, category.name)"
-                                        ng-repeat="category in categories">
-                                        {{category.name}} ({{category.count}})
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <span class="md-breaker"><br/></span>
-
-                <div class="shop-items">
-                    <ul class="shop-cards">
-                        <li class="shop-cards__item"
-                            ng-repeat="item in shopItems | orderBy:sortType:reverseSort"
-                            ng-show="showItem(item)"
-                            data-price="{{item.dollar_cost}}">
-                            <div class="shop-card">
-                                <div class="shop-card__image">
-                                    <a href="images/{{item.filename}}"
-                                       data-lightbox="gallery"
-                                       data-title="{{item.description}}">
-                                        <img class="gallery-item"
-                                             ng-src="images/{{item.filename}}" />
-                                        <div class="img-container sold-out" ng-if="item.quantity == 0 ">SOLD OUT</div>
-                                    </a>
-                                </div>
-                                <div class="shop-card__content">
-                                    <div class="shop-card__title center"><h2>{{item.display_name}}</h2></div>
-                                    <div class="row" ng-if="item.quantity != 0">
-                                        <div class="col-1"></div>
-                                        <div class="col-5">
-                                            <h2 class="center">${{item.dollar_cost}}</h2>
-                                            <div class="center" 
-                                                 ng-if="item.tax_cost != 0 || item.shipping_cost != 0">
-                                                <h4>(+tax/shipping)</h4>
-                                            </div>
-                                        </div>
-                                        <div class="col-5">
-                                            <a href="item.html?id={{item.id}}">
-                                                <button type="button" 
-                                                        class="btn btn-primary btn-lg width--100">
-                                                    <h2>Buy</h2>
-                                                </button>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+            <div class="about-image">
+                <img ng-src="images/{{about[0].image}}" />
             </div>
-        </div>
-
-        <div class="hidden">
-            <span class="gallery-link preload"></span>
-            <span class="shop-link preload"></span>
-            <span class="fb-link preload"></span>
-            <span class="insta-link preload"></span>
-            <span class="tumblr-link preload"></span>
-            <span class="twitter-link preload"></span>
+            <div class="about-text">
+                <h2>{{about[0].text}}</h2>
+            </div>
         </div>
 
         <div class="footer--mobile center">
@@ -214,6 +131,6 @@
     <script src="libs/lightbox/lightbox.min.js"></script>
 
     <!-- Local files -->
-    <script type="text/javascript" src="js/shop.js"></script>
+    <script type="text/javascript" src="js/about.js"></script>
 </body>
 </html>

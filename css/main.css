@@ -55,6 +55,16 @@ body {
       background: transparent url('/images/shop_color.jpg') center no-repeat;
     }
 
+.about-link {
+  background: transparent url('/images/about_bw.jpg') center no-repeat;
+}
+
+    .about-link.active,
+    .about-link:hover,
+    .about-link.preload {
+      background: transparent url('/images/about_color.jpg') center no-repeat;
+    }
+
 .fb-link {
   background: transparent url('/images/fb_bw.jpg') center no-repeat;
 }
@@ -131,6 +141,10 @@ body {
 .header-controls .social {
   font-size: 2.6rem;
 }
+
+    .header-controls .social .col-3 {
+      padding: 0 0.5rem;
+    }
 
 .content {
   height: 100%;
@@ -393,7 +407,25 @@ button {
 
 
 
-/***************** MOBILE STYLES TODO *******************/
+
+/***************** About ********************/
+
+.about-image img {
+  max-width: 100%;
+  display: block;
+  margin: 2rem auto;
+}
+
+.about-text {
+  text-align: center;
+  width: 70%;
+  max-width: 60rem;
+  margin: auto;
+}
+
+
+
+/***************** MOBILE STYLES *******************/
 
 @media only screen and (max-width: 1600px) {
   .grid-item,
